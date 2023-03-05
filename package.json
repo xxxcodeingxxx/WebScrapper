@@ -1,0 +1,14 @@
+{
+  "name": "webscrapper",
+  "version": "1.0.0",
+  "description": "Web scrapping application to gather precise data as needed. Built on Puppeteer",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "John Downs",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^19.7.2"
+  }
+}
