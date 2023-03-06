@@ -9,11 +9,11 @@ async function run() {
   });
   const page = await browser.newPage();
   await page.goto(pageToScrape);
-  await page.waitForSelector(".primary_content");
-  //   await page.setViewport({ width: 1920, height: 1080 });
+  //   await page.waitForSelector(".primary_content");
+  await page.setViewport({ width: 1920, height: 1080 });
 
-  //   await page.screenshot({ path: "example.png", fullPage: true });
-  //   await page.pdf({ path: "example.pdf", format: "A4" });
+  await page.screenshot({ path: "chn.png", fullPage: true });
+  //   await page.pdf({ path: "chn.pdf", format: "A4" });
 
   //   const html = await page.content();
 
@@ -26,19 +26,19 @@ async function run() {
   //     }))
   //   );
 
-  const chn = await page.$$eval(".primary_content", (elements) =>
-    elements.map((e) => ({
-      first: e.querySelector("h1").innerText,
-      paraOne: e.querySelector("p").innerText,
-      title: e.querySelector("h3").innerText,
-    }))
-  );
+  //   const chn = await page.$$eval(".primary_content", (elements) =>
+  //     elements.map((e) => ({
+  //       first: e.querySelector("h1").innerText,
+  //       paraOne: e.querySelector("p").innerText,
+  //       title: e.querySelector("h3").innerText,
+  //     }))
+  //   );
 
   // Save data to JSON file.....
-  fs.writeFile("chn.json", JSON.stringify(chn), (err) => {
-    if (err) throw err;
-    console.log("File saved....");
-  });
+  //   fs.writeFile("index.html", html, (err) => {
+  //     if (err) throw err;
+  //     console.log("File saved....");
+  //   });
   await browser.close();
 }
 
