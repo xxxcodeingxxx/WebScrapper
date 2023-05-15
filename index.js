@@ -1,6 +1,6 @@
 const fs = require("fs");
 const puppeteer = require("puppeteer");
-const pageToScrape = "https://chninc.org/about-chn/our-purpose.html";
+const pageToScrape = "https://chninc.org/donate.html";
 
 async function run() {
   const browser = await puppeteer.launch({
@@ -37,7 +37,7 @@ async function run() {
   // );
 
   // Save data to JSON file.....
-  fs.writeFile("purpose.html", html, (err) => {
+  fs.writeFile("Scrapes/CHN/donate.html", html, (err) => {
     if (err) throw err;
     console.log("File saved....");
   });
